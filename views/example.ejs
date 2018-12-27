@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include partials/header.ejs %>
+</head>
+<body>
+<% include partials/nav.ejs %>
+
+<div class="container">
+
+    <h1>Welcome to the App!</h1>
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Status</th>
+            <th>Actions</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>John Smith</td>
+            <td>Admin</td>
+            <td><a class="waves-effect waves-light btn-small indigo">Activate</a></td>
+            <td><a href="#"><i class="material-icons">add_to_queue</i></a>
+                <a href="#"><i class="material-icons">archive</i></a>
+            </td>
+        </tr>
+        <tr>
+            <td>Adam Brown</td>
+            <td>User</td>
+            <td><a class="waves-effect waves-light btn-small indigo">Activate</a></td>
+            <td><a href="#"><i class="material-icons">add_to_queue</i></a>
+                <a href="#"><i class="material-icons">archive</i></a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div class="section">
+        <div class="row">
+            Here comes the content.
+        </div>
+
+        <div class="row">
+            <div class="col s6">
+                <h3>Warning</h3>
+                <p>You have been warned.</p>
+            </div>
+            <div class="col s6">
+                <div class="card blue-grey darken-1">
+                    <div class="card-content white-text">
+                        <span class="card-title">Card Title</span>
+                        <p>I am a very simple card. I am good at containing small bits of information.
+                            I am convenient because I require little markup to use effectively.</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">This is a link</a>
+                        <a href="#">This is a link</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="row">
+            <div class="col s12 m6">
+                <div class="card green darken-1">
+                    <div class="card-content white-text">
+                        <span class="card-title">Card Title</span>
+                        <p>I am a very simple card. I am good at containing small bits of information.
+                            I am convenient because I require little markup to use effectively.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- END container -->
+</div>
+
+</body>
+
+</html>

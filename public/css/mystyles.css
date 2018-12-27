@@ -1,0 +1,18 @@
+h1 {
+    font-size: 2em;
+}
+h2 {
+    font-size: 1.8em;
+}
+h3 {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+nav .brand-logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+nav {
+    height: 48px;
+    line-height: 48px;
+}
