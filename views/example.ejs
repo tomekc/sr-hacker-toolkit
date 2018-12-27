@@ -2,13 +2,15 @@
 <html lang="en">
 <head>
     <% include partials/header.ejs %>
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1"></script>
 </head>
 <body>
 <% include partials/nav.ejs %>
+<div class="container" id="app">
 
-<div class="container">
-
-    <h1>Welcome to the App!</h1>
+    <h1>Welcome to the {{name}}!</h1>
     <table>
         <thead>
         <tr>
@@ -19,18 +21,13 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td>John Smith</td>
-            <td>Admin</td>
-            <td><a class="waves-effect waves-light btn-small indigo">Activate</a></td>
-            <td><a href="#"><i class="material-icons">add_to_queue</i></a>
-                <a href="#"><i class="material-icons">archive</i></a>
+        <tr v-for="p in people">
+            <td>{{p.name}}</td>
+            <td>{{p.type}}</td>
+            <td>
+                <a class="waves-effect waves-light btn-small indigo" v-if="!p.active" v-on:click="activate(p)">Activate</a>
+                <a class="waves-effect waves-light btn-small orange" v-if="p.active" v-on:click="deactivate(p)">Deactivate</a>
             </td>
-        </tr>
-        <tr>
-            <td>Adam Brown</td>
-            <td>User</td>
-            <td><a class="waves-effect waves-light btn-small indigo">Activate</a></td>
             <td><a href="#"><i class="material-icons">add_to_queue</i></a>
                 <a href="#"><i class="material-icons">archive</i></a>
             </td>
@@ -82,5 +79,32 @@
 </div>
 
 </body>
+
+<script type="text/javascript">
+    var app = new Vue({
+        el: '#app',
+        created() {
+            this.fetchData();
+        },
+        data: {
+            name: 'Monterrey',
+            people: []
+        },
+        methods: {
+            fetchData() {
+                this.$http.get('/ajax/main/people').then( data => {
+                    this.people = data.body.people;
+                });
+            },
+            activate(p) {
+                p.active = true;
+            },
+            deactivate(p) {
+                p.active = false;
+            }
+        }
+    });
+</script>
+
 
 </html>
