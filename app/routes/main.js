@@ -9,11 +9,13 @@ module.exports = function (app) {
         res.send({
             people : [
                 {
+                    id: 1,
                     name: 'John Smith',
                     type: 'Admin',
                     active: true
                 },
                 {
+                    id: 2,
                     name: 'Adam Borwn',
                     type: 'Standard',
                     active: false
