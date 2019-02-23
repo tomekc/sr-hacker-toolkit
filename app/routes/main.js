@@ -1,7 +1,11 @@
 module.exports = function (app) {
 
     app.get('/', (req, res) => {
-        res.render('example');
+        console.log('Current user', req.currentUser);
+        res.render('example', {
+            foo: 123,
+            user: req.session.user || {},
+        });
     });
 
     // Backend service for Vue.js application

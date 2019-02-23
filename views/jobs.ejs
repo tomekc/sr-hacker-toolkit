@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include partials/header.ejs %>
+</head>
+<body>
+<% include partials/nav.ejs %>
+<div class="container" id="app">
+
+    <h1>Jobs</h1>
+
+    <% if(jobs) { %>
+
+    <table>
+        <thead>
+        <th>Name</th>
+        <th>Ref #</th>
+        <th>Status</th>
+        </thead>
+        <tbody>
+        <%for (var i in jobs) { %>
+        <tr>
+            <td><%= jobs[i].title %></td>
+            <td><%= jobs[i].refNumber %></td>
+            <td><%= jobs[i].status %></td>
+        </tr>
+
+        <% } %>
+
+
+        </tbody>
+    </table>
+
+    <% } %>
+
+</div>
+</body>
+</html>

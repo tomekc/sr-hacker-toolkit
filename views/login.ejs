@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include partials/header.ejs %>
+</head>
+<body>
+<% include partials/nav.ejs %>
+<div class="container" id="app">
+
+    <div>
+        <h1>Welcome to the Monterey!</h1>
+
+        <a class="btn-small green" href="https://www.smartrecruiters.com/identity/oauth/allow?client_id=<%= client_id %>&amp;redirect_uri=<%= redirect_uri %>&amp;scope=<%= scopes %>">Sign in with SmartRecruiters account</a>
+    </div>
+
+</div>
+</body>
+</html>

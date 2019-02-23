@@ -9,11 +9,18 @@ Front-end is built in _naive_ fashion: frameworkless, plain old CSS and HTML tem
  
 ## Running
 
+You need to provide a couple of environment variables to run the app.  
+
 `node app.js`
+
+When developing on local machine, make sure you set CLIENT_ID and CLIENT_SECRET.
 
 ### Environment variables
 
-`APP_PORT` port the app listen to, defaults to **3000**
+* `PORT` port the app listen to, defaults to **3000**
+* `CLIENT_ID` API key
+* `CLIENT_SECRET` API secret key 
+* `REDIRECT_URI` URL to redirect to after successful OAuth authentication, if not set, defaults to http://localhost:3000/auth/callback
 
 ## Customization guide
 
